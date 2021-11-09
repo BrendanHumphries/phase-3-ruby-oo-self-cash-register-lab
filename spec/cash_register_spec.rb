@@ -78,6 +78,7 @@ describe 'CashRegister' do
     context 'when called with three arguments' do
       it 'returns an array containing all items that have been added, including multiples' do
         new_register = CashRegister.new
+        new_register.clear_cart
         new_register.add_item("eggs", 1.99, 2)
         new_register.add_item("tomato", 1.76, 3)
         expect(new_register.items).to eq(["eggs", "eggs", "tomato", "tomato", "tomato"])
